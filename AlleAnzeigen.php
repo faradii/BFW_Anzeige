@@ -50,81 +50,32 @@
 
         </div>
         <div class="Anzeigen">
-            <!-- <div class="schaukasten">
-                <p class="Vorschlag">Top Vorschläge</p>
-                <?php
-                include "AnzeigeKlasse.php";
-
-                // $alleanzeigen = ["id" => "1", "Kategorie" => "Bücher", "Produkt" => "Buch", "Preis" => 22.45, "Datum" => "19-11-2024", "image" => "Url", "Bestätigung" => false];
-                
-                // // echo $alleanzeigen["id"];
-                // foreach ($alleanzeigen as $attribut => $attributswert) {
-                //     echo "$attribut : $attributswert <br/>";
-                // }
-                
-
-
-
-                $HarryPotter = new Anzeige(1, "Bücher", "Harry Potter", 23, "19-11-2024", "\images\harrypotter.jpg", "Ein nettes Buch ,was ich abgebe, weil ich keine Zauberer mag", False);
-                $Rechner = new Anzeige(2, "Technik", "Komplett-PC", 220, "10-10-2024", "\images\\rechner.jpg", "Ein alter Personal Computer", False);
-                $Objekt = new Anzeige(2, "Lebensmittel", "Kartoffel", 15, "15-07-2023", "\images\kartoffel.jpg", "Ich verkaufe hier eine alte Kartoffel oder was es auch immer ist.", False);
-                $Objekt2 = new Anzeige(2, "Dienstleistung", "IT-Nachhilfe", 2020, "12-01-2020", "\images\\nachhilfe.jpg", "Ich biete nebem IT auch Französisch an !", False);
-                $Objekt3 = new Anzeige(2, "Möbel", "Höhenverstellbarer Tisch", 0, "02-11-2019", "\images\\tisch.jpg", "Ich verkaufe hiermit ein sehr begehrten höhenverstellbaren Tisch!!", False);
-
-
-
-
-
-                $array = [$Rechner, $HarryPotter, $Objekt2, $Objekt3];
-                $length = count($array);
-
-
-                for ($i = 0; $i < $length; $i++) {
-
-
-                    $array[$i]->show();
-                }
-
-
-
-                ?>
-            </div> -->
 
             <p>alle Suchergebnisse: </p>
-
-            <?php
-
-
-            $conn = new mysqli("localhost", "root", "", "bfw_datenbank");
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-
-            }
-            echo "Connected successfully <br/><br/>";
-
-
-            $sql = "SELECT * FROM kleinanzeigen ";
-            $ergebnis = $conn->query($sql);
-
-            if ($ergebnis->num_rows > 0) {
-                while ($row = $ergebnis->fetch_assoc()) {
-                    echo "<div><ul><li>" . $row['name'] . "</li>" . "<li>" . " online seit: " . $row["datum"] . "</li>" . "<li>" . "Kategorie: " . $row["kategorie"] . "</li>" . "<li>" . $row["beschreibung"] . "</li>" . "<li>" . " Preis: " . $row["preis"] . "€" . "</li>" . "</ul></div>";
-                }
-            }
-            ?>
             <div class="suche_kasten">
 
-                <?php for ($i = 0; $i < $length; $i++) {
-                    $array = [$Rechner, $HarryPotter, $Objekt3, $Rechner, $HarryPotter, $Objekt2, $Rechner, $HarryPotter, $Objekt];
-                    $length = count($array);
+                <?php
 
 
-                    $array[$i]->show_Anzeige_Suche();
-                } ?>
+                $conn = new mysqli("localhost", "root", "", "bfw_datenbank");
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
 
+                }
+                // echo "Connected successfully <br/><br/>";
+                
 
+                $sql = "SELECT * FROM kleinanzeigen ";
+                $ergebnis = $conn->query($sql);
+
+                if ($ergebnis->num_rows > 0) {
+                    while ($row = $ergebnis->fetch_assoc()) {
+
+                        echo "<div class='Anzeige_suche'>" . "<img src='" . $row['bild'] . "'" . "width=200px height=150px/><ul><li>" . $row['name'] . "</li>" . "<li>" . " online seit: " . $row["datum"] . "</li>" . "<li>" . "Kategorie: " . $row["kategorie"] . "</li>" . "<li>" . $row["beschreibung"] . "</li><br/>" . "<li><b class='Preis'>" . $row["preis"] . "€</b>" . "</li>" . "</ul></div>";
+                    }
+                }
+                ?>
             </div>
-
             <p>Ende der Ergebnisse </p>
 
         </div>

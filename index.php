@@ -60,40 +60,27 @@
             <div class="schaukasten">
                 <p class="Vorschlag">Top Vorschläge</p>
                 <?php
-                include "AnzeigeKlasse.php";
-
-                // $alleanzeigen = ["id" => "1", "Kategorie" => "Bücher", "Produkt" => "Buch", "Preis" => 22.45, "Datum" => "19-11-2024", "image" => "Url", "Bestätigung" => false];
-                
-                // // echo $alleanzeigen["id"];
-                // foreach ($alleanzeigen as $attribut => $attributswert) {
-                //     echo "$attribut : $attributswert <br/>";
-                // }
-                
 
 
+                $conn = new mysqli("localhost", "root", "", "bfw_datenbank");
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
 
-                $HarryPotter = new Anzeige(1, "Bücher", "Harry Potter", 23, "19-11-2024", "\images\harrypotter.jpg", "Ein nettes Buch ,was ich abgebe, weil ich keine Zauberer mag", False);
-                $Rechner = new Anzeige(2, "Technik", "Komplett-PC", 220, "10-10-2024", "\images\\rechner.jpg", "Ein alter Personal Computer", False);
-                $Objekt = new Anzeige(2, "Lebensmittel", "Kartoffel", 15, "15-07-2023", "\images\kartoffel.jpg", "Ich verkaufe hier eine alte Kartoffel oder was es auch immer ist.", False);
-                $Objekt2 = new Anzeige(2, "Dienstleistung", "IT-Nachhilfe", 2020, "12-01-2020", "\images\\nachhilfe.jpg", "Ich biete nebem IT auch Französisch an !", False);
-                $Objekt3 = new Anzeige(2, "Möbel", "Höhenverstellbarer Tisch", 0, "02-11-2019", "\images\\tisch.jpg", "Ich verkaufe hiermit ein sehr begehrten höhenverstellbaren Tisch!!", False);
-
-
-
-
-
-                $array = [$Rechner, $HarryPotter, $Objekt2, $Objekt3];
-                $length = count($array);
-
-
-                for ($i = 0; $i < $length; $i++) {
-
-
-                    $array[$i]->show();
                 }
+                // echo "Connected successfully <br/><br/>";
+                
 
+                $sql = "SELECT * FROM kleinanzeigen ";
+                $ergebnis = $conn->query($sql);
 
+                if ($ergebnis->num_rows > 0) {
+                    $i = 0;
+                    while ($i < 4 and $row = $ergebnis->fetch_assoc()) {
+                        $i++;
 
+                        echo "<div class='Anzeige_kasten'>" . "<img src='" . $row['bild'] . "'" . "width=200px height=150px/><ul><li>" . $row['name'] . "</li>" . "<li>" . "<li><b class='Preis'>" . $row["preis"] . "€</b>" . "</li>" . "</ul></div>";
+                    }
+                }
                 ?>
             </div>
 
