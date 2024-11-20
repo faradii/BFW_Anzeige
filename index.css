@@ -26,6 +26,7 @@ h3{
     border-radius: 5px;
  
 }
+.lupe{position: relative;left:35px;top:5px}
 .grey_button{
     color:white;
     background-color: #87b817;
@@ -149,7 +150,7 @@ ul{
 .suche_kasten{
 
     text-align: left;
-    height:550px;
+    height:90%;
     display: flex;
     /* align-items: center; */
     flex-direction: column;
@@ -161,4 +162,12 @@ ul{
 
 .Preis{
     color:rgb(102, 138, 35);
+}
+
+.Bestätigungs_button_admin{
+    
+   
+    height:20px;
+    
+
 }

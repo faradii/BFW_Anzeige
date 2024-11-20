@@ -10,6 +10,7 @@ class Anzeige
     public $Datum;
     public $Image;
     public $Bestätigung;
+    public $Beschreibung;
 
     public function __construct($id, $Kategorie, $Produkt, $Preis, $Datum, $Image, $Beschreibung, $Bestätigung)
     {
@@ -53,12 +54,33 @@ class Anzeige
 <li>Online seit: $this->Datum </li>
 <li>Kategorie: $this->Kategorie </li>
 <li> $this->Beschreibung </li>
+<br/>
 <li><b class='Preis'> $this->Preis € </b></li>
 
 
 </ul> </div>";
     }
 
+    public function show_admin()
+    {
+
+        echo "<div class='Anzeige_suche'> 
+        <img src='$this->Image' width=200px height=150px/><ul>
+        
+            <li><b>$this->Produkt </b></li>
+            <li>Online seit: $this->Datum </li>
+            <li>Kategorie: $this->Kategorie </li>
+            <li> $this->Beschreibung </li>
+            <br/>
+            <li><b class='Preis'> $this->Preis € </b></li>";
+        if ($this->Bestätigung == false) {
+            echo '<li><button class="Bestätigungs_button_admin" >Bestätigen </button> </li>';
+        }
+
+
+        echo "</ul></div>";
+
+    }
 
 }
 

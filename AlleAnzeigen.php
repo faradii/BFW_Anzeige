@@ -11,12 +11,8 @@
 
 <body>
 
-    <img src="/images/ebay_logo.png" alt="svg" width="400px">
+    <a href="index.php"><img src="/images/ebay_logo.png" alt="svg" width="400px"></a>
     <h3>BFW-Version Kostenpflichtig. Kompliziert. Nutzlos.</h3>
-    <!-- <form action="Loginadmin.php" methode="POST">
-
-        <input type="submit" value="Einloggen Admin"> </input>
-    </form> -->
     <a class="admin_" href="Loginadmin.php">Einloggen Admin</a>
     <div class="Banner">
 
@@ -42,9 +38,6 @@
 
         <div class="Rubrik">
             <p>Kategorien</p>
-            <a href="AlleAnzeigen.php" class="Alles_Anzeigen_button">Alle Anzeigen</a>
-
-
             <ul>
                 <li><a>Bücher</a></li>
                 <li><a>Technik</a></li>
@@ -57,7 +50,7 @@
 
         </div>
         <div class="Anzeigen">
-            <div class="schaukasten">
+            <!-- <div class="schaukasten">
                 <p class="Vorschlag">Top Vorschläge</p>
                 <?php
                 include "AnzeigeKlasse.php";
@@ -95,12 +88,31 @@
 
 
                 ?>
-            </div>
+            </div> -->
+
+            <p>alle Suchergebnisse: </p>
+
+            <?php
 
 
+            $conn = new mysqli("localhost", "root", "", "bfw_datenbank");
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+
+            }
+            echo "Connected successfully <br/><br/>";
 
 
-            <!-- <div class="suche_kasten">
+            $sql = "SELECT * FROM kleinanzeigen ";
+            $ergebnis = $conn->query($sql);
+
+            if ($ergebnis->num_rows > 0) {
+                while ($row = $ergebnis->fetch_assoc()) {
+                    echo "<div><ul><li>" . $row['name'] . "</li>" . "<li>" . " online seit: " . $row["datum"] . "</li>" . "<li>" . "Kategorie: " . $row["kategorie"] . "</li>" . "<li>" . $row["beschreibung"] . "</li>" . "<li>" . " Preis: " . $row["preis"] . "€" . "</li>" . "</ul></div>";
+                }
+            }
+            ?>
+            <div class="suche_kasten">
 
                 <?php for ($i = 0; $i < $length; $i++) {
                     $array = [$Rechner, $HarryPotter, $Objekt3, $Rechner, $HarryPotter, $Objekt2, $Rechner, $HarryPotter, $Objekt];
@@ -109,7 +121,12 @@
 
                     $array[$i]->show_Anzeige_Suche();
                 } ?>
-            </div> -->
+
+
+            </div>
+
+            <p>Ende der Ergebnisse </p>
+
         </div>
 
     </div>

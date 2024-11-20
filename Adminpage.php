@@ -17,47 +17,39 @@
 
         <input type="submit" value="Einloggen Admin"> </input>
     </form> -->
-    <a class="admin_" href="Loginadmin.php">Einloggen Admin</a>
+    <a class="admin_" href="index.php">Logout Admin</a>
     <div class="Banner">
 
-        <form action="Suche.php" methode="POST">
-            <input placeholder="Was suchen Sie?">
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
+        <p>Admin Bereich</p>
 
-            <img class="lupe" src="/images/lupe.png" width="20px" alt="Q">
-            <input class="blue_button" type="submit" value="Finden"> </input>
-        </form>
-        <button class="grey_button" inputtype="submit">+ Anzeige aufgeben</button>
+
 
     </div>
-    <div class="werbung">
-        <img src="/images/werbung1.jpeg" alt="svg" width="400px">
-        <img src="/images/werbung2.jpg" alt="svg" width="400px">
-        <img src="/images/werbung3.jpg" alt="svg" width="400px">
-        <img src="/images/werbung4.jpg" alt="svg" width="400px">
 
-
-    </div>
     <div class="Hauptseite">
-        <!-- <p>Werbung</p> -->
-
-        <div class="Rubrik">
-            <p>Kategorien</p>
-            <a href="AlleAnzeigen.php" class="Alles_Anzeigen_button">Alle Anzeigen</a>
-
-
-            <ul>
-                <li><a>Bücher</a></li>
-                <li><a>Technik</a></li>
-                <li> <a>Möbel</a></li>
-                <li> <a>Dienstleistungen</a></li>
-                <li><a>Lebensmittel</a></li>
-            </ul>
 
 
 
-        </div>
+
         <div class="Anzeigen">
-            <div class="schaukasten">
+
+            <p>Bitte bestätige diese Anzeigen um sie freizuschalten!</p>
+            <!-- <div class="schaukasten">
                 <p class="Vorschlag">Top Vorschläge</p>
                 <?php
                 include "AnzeigeKlasse.php";
@@ -95,21 +87,21 @@
 
 
                 ?>
-            </div>
+            </div> -->
 
 
 
 
-            <!-- <div class="suche_kasten">
+            <div class="suche_kasten">
 
                 <?php for ($i = 0; $i < $length; $i++) {
                     $array = [$Rechner, $HarryPotter, $Objekt3, $Rechner, $HarryPotter, $Objekt2, $Rechner, $HarryPotter, $Objekt];
                     $length = count($array);
 
 
-                    $array[$i]->show_Anzeige_Suche();
+                    $array[$i]->show_admin();
                 } ?>
-            </div> -->
+            </div>
         </div>
 
     </div>
