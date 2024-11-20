@@ -71,8 +71,6 @@ input{
     
     margin-top:50px;
     height:100vh;
-
-
     color:rgb(0, 0, 0);
 }
 .Rubrik{
@@ -80,9 +78,11 @@ input{
 padding:20px;
     height:100%;
     width:150px;
-    border:2px solid black;
+    border:1px solid rgb(199, 198, 198);
     color:rgb(0, 0, 0);
    
+    background-color: #d2d5d7;
+
 
 
 }
@@ -90,19 +90,25 @@ padding:20px;
     display: block;
     height:100vh;
     width:70%;
-    border:1px solid rgb(157, 153, 153);
+    border:1px solid rgb(194, 190, 190);
     color:rgb(0, 0, 0);
 padding:20px;
 
 justify-content: center;
 
-}
+background-color: #e2e4e6;
 
+}
+.Vorschlag{
+
+    /* text-align: center; */
+    margin-right: 50px;
+}
 .schaukasten{
 
     display: flex;
     /* overflow-x: scroll; */
-    height:350px;
+    height:300px;
     margin: auto;
   justify-content: center;
     
@@ -115,16 +121,16 @@ ul{
 .Anzeige_kasten{
    display: block;
     justify-content: center;
-    text-align: center;
+    text-align: center; 
 
     height:250px;
     width:200px;
  
     /* padding:10px; */
-    border:1px solid grey;
+    border:2px solid rgb(96, 149, 28);
     border-radius: 5px;
     /* overflow-y: scroll; */
-    background-color: #cdec84;
+    background-color: #ecf1df;
     margin:2px;
 
     
@@ -133,6 +139,8 @@ ul{
 .Anzeige_suche{
     display: flex;
     /* background-color: #0463d1; */
+    border:1px solid rgb(96, 149, 28);
+
  
 
 }
@@ -147,6 +155,10 @@ ul{
     flex-direction: column;
     /* justify-content: center; */
     overflow-y: scroll;
-  
+
     
+}
+
+.Preis{
+    color:rgb(102, 138, 35);
 }

@@ -24,11 +24,11 @@
 
     </div>
     <div class="werbung">
-        <p>Werbung</p>
-        <p>Werbung</p>
-        <p>Werbung</p>
-        <p>Werbung</p>
-        <p>Werbung</p>
+        <img src="/images/werbung1.jpeg" alt="svg" width="400px">
+        <img src="/images/werbung2.jpg" alt="svg" width="400px">
+        <img src="/images/werbung3.jpg" alt="svg" width="400px">
+        <img src="/images/werbung4.jpg" alt="svg" width="400px">
+
 
     </div>
     <div class="Hauptseite">
@@ -50,6 +50,7 @@
         </div>
         <div class="Anzeigen">
             <div class="schaukasten">
+                <p class="Vorschlag">Top Vorschläge</p>
                 <?php
                 include "AnzeigeKlasse.php";
 
@@ -64,14 +65,16 @@
 
 
                 $HarryPotter = new Anzeige(1, "Bücher", "Harry Potter", 23, "19-11-2024", "\images\harrypotter.jpg", "Ein nettes Buch ,was ich abgebe, weil ich keine Zauberer mag", False);
-                $Rechner = new Anzeige(2, "Technik", "ThinkCentre", 220, "10-10-2024", "\images\\rechner.jpg", "Ein alter Personal Computer", False);
+                $Rechner = new Anzeige(2, "Technik", "Komplett-PC", 220, "10-10-2024", "\images\\rechner.jpg", "Ein alter Personal Computer", False);
                 $Objekt = new Anzeige(2, "Lebensmittel", "Kartoffel", 15, "15-07-2023", "\images\kartoffel.jpg", "Ich verkaufe hier eine alte Kartoffel oder was es auch immer ist.", False);
-                $Objekt2 = new Anzeige(2, "Dienstleistung", "Nachhilfe", 2020, "12-01-2020", "\images\\nachhilfe.jpg", "Ich biete nebem IT auch Französisch an !", False);
+                $Objekt2 = new Anzeige(2, "Dienstleistung", "IT-Nachhilfe", 2020, "12-01-2020", "\images\\nachhilfe.jpg", "Ich biete nebem IT auch Französisch an !", False);
+                $Objekt3 = new Anzeige(2, "Möbel", "Höhenverstellbarer Tisch", 0, "02-11-2019", "\images\\tisch.jpg", "Ich verkaufe hiermit ein sehr begehrten höhenverstellbaren Tisch!!", False);
 
 
 
 
-                $array = [$Rechner, $HarryPotter, $Objekt];
+
+                $array = [$Rechner, $HarryPotter, $Objekt2, $Objekt3];
                 $length = count($array);
 
 
@@ -92,7 +95,7 @@
             <div class="suche_kasten">
 
                 <?php for ($i = 0; $i < $length; $i++) {
-                    $array = [$Rechner, $HarryPotter, $Objekt, $Rechner, $HarryPotter, $Objekt, $Rechner, $HarryPotter, $Objekt];
+                    $array = [$Rechner, $HarryPotter, $Objekt3, $Rechner, $HarryPotter, $Objekt2, $Rechner, $HarryPotter, $Objekt];
                     $length = count($array);
 
 

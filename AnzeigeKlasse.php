@@ -53,7 +53,7 @@ class Anzeige
 <li>Online seit: $this->Datum </li>
 <li>Kategorie: $this->Kategorie </li>
 <li> $this->Beschreibung </li>
-<li><b> $this->Preis € </b></li>
+<li><b class='Preis'> $this->Preis € </b></li>
 
 
 </ul> </div>";
