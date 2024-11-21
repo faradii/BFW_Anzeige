@@ -22,7 +22,7 @@
             <img class="lupe" src="/images/lupe.png" width="20px" alt="Q">
             <input class="blue_button" type="submit" value="Finden"> </input>
         </form>
-        <button class="grey_button" inputtype="submit">+ Anzeige aufgeben</button>
+        <a href="AnzeigeAufgeben.php"> <button class="grey_button">+ Anzeige aufgeben</button></a>
 
     </div>
     <div class="werbung">

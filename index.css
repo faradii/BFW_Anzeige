@@ -171,3 +171,31 @@ ul{
     
 
 }
+
+.flexer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.Formular_Anzeige{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:50vh;
+    border: 1px solid rgb(94, 133, 36);
+    border-radius: 5px;
+    padding:20px;
+    background-color: #e4e6e8;
+
+}
+.Formular_Admin{
+    display: flex;
+    justify-content: center;
+   
+width:50%;
+    border: 1px solid rgb(94, 133, 36);
+    background-color: #d2d5d7;
+    border-radius: 5px;
+    padding:20px;
+}
