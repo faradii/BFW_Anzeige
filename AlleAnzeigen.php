@@ -38,14 +38,16 @@
 
         <div class="Rubrik">
             <p>Kategorien</p>
-            <ul>
-                <li><a>Bücher</a></li>
-                <li><a>Technik</a></li>
-                <li> <a>Möbel</a></li>
-                <li> <a>Dienstleistungen</a></li>
-                <li><a>Lebensmittel</a></li>
-            </ul>
-
+            <form method="POST" action="">
+                <ul>
+                    <li><a><button type="submit" name="action" value="Bücher">Bücher</button></a></li>
+                    <li><a><button type="submit" name="action" value="Technik">Technik</button></a></li>
+                    <li> <a><button type="submit" name="action" value="Möbel">Möbel</button></a></li>
+                    <li> <a><button type="submit" name="action" value="Dienstleistung">Dienstleistungen</button></a>
+                    </li>
+                    <li><a><button type="submit" name="action" value="Lebensmittel">Lebensmittel</button></a></li>
+                </ul>
+            </form>
 
 
         </div>
@@ -56,28 +58,57 @@
 
                 <?php
 
-
-                $conn = new mysqli("localhost", "root", "", "bfw_datenbank");
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-
-                }
-                // echo "Connected successfully <br/><br/>";
+                include "DatabaseKlasse.php";
+                $db = new Database();
+                // $db->showall();
                 
+                if (isset($_POST['action'])) {
+                    if ($_POST['action'] === 'Bücher') {
 
-                $sql = "SELECT * FROM kleinanzeigen ";
-                $ergebnis = $conn->query($sql);
 
-                if ($ergebnis->num_rows > 0) {
-                    while ($row = $ergebnis->fetch_assoc()) {
+                        $db->showBücher();
+                    }
+                    if ($_POST['action'] === 'Technik') {
 
-                        echo "<div class='Anzeige_suche'>" . "<img src='" . $row['bild'] . "'" . "width=200px height=150px/><ul><li>" . $row['name'] . "</li>" . "<li>" . " online seit: " . $row["datum"] . "</li>" . "<li>" . "Kategorie: " . $row["kategorie"] . "</li>" . "<li>" . $row["beschreibung"] . "</li><br/>" . "<li><b class='Preis'>" . $row["preis"] . "€</b>" . "</li>" . "</ul></div>";
+
+                        $db->showTechnik();
+                    }
+                    if ($_POST['action'] === 'Möbel') {
+
+
+                        $db->showMöbel();
+                    }
+                    if ($_POST['action'] === 'Dienstleistungen') {
+
+
+                        $db->showDienstleistungen();
+                    }
+                    if ($_POST['action'] === 'Lebensmittel') {
+
+
+                        $db->showLebensmittel();
                     }
                 }
-                $conn->close();
+                //ohne klasse wäre die alternative die hier: 
+                
+                // $conn = new mysqli("localhost", "root", "", "bfw_datenbank");
+                // if ($conn->connect_error) {
+                //     die("Connection failed: " . $conn->connect_error);
+                
+                // }
+                // // echo "Connected successfully <br/><br/>";
+                
 
-
-
+                // $sql = "SELECT * FROM kleinanzeigen ";
+                // $ergebnis = $conn->query($sql);
+                
+                // if ($ergebnis->num_rows > 0) {
+                //     while ($row = $ergebnis->fetch_assoc()) {
+                
+                //         echo "<div class='Anzeige_suche'>" . "<img src='" . $row['bild'] . "'" . "width=200px height=150px/><ul><li>" . $row['name'] . "</li>" . "<li>" . " online seit: " . $row["datum"] . "</li>" . "<li>" . "Kategorie: " . $row["kategorie"] . "</li>" . "<li>" . $row["beschreibung"] . "</li><br/>" . "<li><b class='Preis'>" . $row["preis"] . "€</b>" . "</li>" . "</ul></div>";
+                //     }
+                // }
+                // $conn->close();
                 ?>
 
 

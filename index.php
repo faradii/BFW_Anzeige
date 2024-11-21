@@ -43,20 +43,31 @@
 
         <div class="Rubrik">
             <p>Kategorien</p>
-            <a href="AlleAnzeigen.php" class="Alles_Anzeigen_button">Alle Anzeigen</a>
 
 
-            <ul>
-                <li><a>Bücher</a></li>
-                <li><a>Technik</a></li>
-                <li> <a>Möbel</a></li>
-                <li> <a>Dienstleistungen</a></li>
-                <li><a>Lebensmittel</a></li>
-            </ul>
 
+
+            <div class="">
+
+                <form method="POST" action="">
+                    <ul>
+                        <li><button type="submit" name="action" value="Alle">Alle Anzeigen</button></li>
+                        <li><a><button type="submit" name="action" value="Bücher">Bücher</button></a></li>
+                        <li><a><button type="submit" name="action" value="Technik">Technik</button></a></li>
+                        <li> <a><button type="submit" name="action" value="Möbel">Möbel</button></a></li>
+                        <li> <a><button type="submit" name="action" value="Dienstleistung">Dienstleistungen</button></a>
+                        </li>
+                        <li><a><button type="submit" name="action" value="Lebensmittel">Lebensmittel</button></a></li>
+                    </ul>
+                </form>
+
+
+            </div>
 
 
         </div>
+
+
         <div class="Anzeigen">
             <div class="schaukasten">
                 <p class="Vorschlag">Top Vorschläge</p>
@@ -79,7 +90,7 @@
                     while ($i < 4 and $row = $ergebnis->fetch_assoc()) {
                         $i++;
 
-                        echo "<div class='Anzeige_kasten'>" . "<img src='" . $row['bild'] . "'" . "width=200px height=150px/><ul><li>" . $row['name'] . "</li>" . "<li>" . "<li><b class='Preis'>" . $row["preis"] . "€</b>" . "</li>" . "</ul></div>";
+                        echo "<div class='Anzeige_kasten'>" . "<img src='" . $row['bild'] . "'" . "width=200px height=150px/><ul><li>" . $row['name'] . "</li>" . "<li>" . "<li><b class='Preis'> </br>" . $row["preis"] . "€</b>" . "</li>" . "</ul></div>";
                     }
                 }
                 $conn->close();
@@ -89,19 +100,55 @@
 
 
 
-            <!-- <div class="suche_kasten">
+            <div class="suche_kasten">
 
-                <?php for ($i = 0; $i < $length; $i++) {
-                    $array = [$Rechner, $HarryPotter, $Objekt3, $Rechner, $HarryPotter, $Objekt2, $Rechner, $HarryPotter, $Objekt];
-                    $length = count($array);
+                <p>alle Suchergebnisse: </p>
+                <div class="suche_kasten">
+
+                    <?php
+
+                    include "DatabaseKlasse.php";
+                    $db = new Database();
+                    // $db->showall();
+                    
+                    if (isset($_POST['action'])) {
+                        if ($_POST['action'] === 'Alle') {
 
 
-                    $array[$i]->show_Anzeige_Suche();
-                } ?>
-            </div> -->
-        </div>
+                            $db->showall();
+                        }
+                        if ($_POST['action'] === 'Bücher') {
 
-    </div>
+
+                            $db->showBücher();
+                        }
+                        if ($_POST['action'] === 'Technik') {
+
+
+                            $db->showTechnik();
+                        }
+                        if ($_POST['action'] === 'Möbel') {
+
+
+                            $db->showMöbel();
+                        }
+                        if ($_POST['action'] === 'Dienstleistung') {
+
+
+                            $db->showDienstleistung();
+                        }
+                        if ($_POST['action'] === 'Lebensmittel') {
+
+
+                            $db->showLebensmittel();
+                        }
+
+                    }
+
+                    ?>
+
+
+                </div>
 </body>
 
 </html>
