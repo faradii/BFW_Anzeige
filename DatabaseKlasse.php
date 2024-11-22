@@ -42,11 +42,8 @@ class Database
         $stmt = $this->conn->prepare("UPDATE `kleinanzeigen` SET `bestätigung` = '1' WHERE id = ? ");
         $stmt->bind_param("i", $id, );
 
-
-
-
         if ($stmt->execute()) {
-            echo "Erfolgreich hinzugefügt ";
+            // echo "Erfolgreich hinzugefügt ";
         } else {
             echo "Fehler" . $this->conn->error;
         }

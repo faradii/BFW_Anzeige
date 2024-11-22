@@ -4,39 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>Admin_login</title>
+    <link rel="stylesheet" href="index.css">
+
 </head>
 
 <body>
+    <div class="flexer"></div>
+    <a href="index.php"><img src="/images/ebay_logo.png" alt="svg" width="400px"></a>
 
-    <form action="test.php" method="POST" class="Formular_Anzeige">
-        <p>Gib hier deine Anzeige auf!</p>
-        <input placeholder="Kategorie" type="text" name="kategorie">
-        <input placeholder="Name" type="text" name="name">
-        <input type="submit" name="submit" value="Absenden" />
+    <p>Logg dich hier ein, lieber Admin!</p>
+    <form action="" method="POST" class="Formular_Admin">
+
+        <input placeholder="Email" name="email">
+        <input placeholder="Passwort" name="passwort">
+
+        <input type="submit" name="submit" value="Einloggen"> </input>
     </form>
 
     <?php
-    include "DatabaseKlasse.php";
+    session_start();
+
+    $admin_name = 'faro';
+    $admin_passwort = "1234";
+
+
+
 
     if (isset($_POST['submit'])) {
-        // var_dump($_POST);
-    
-        $kategorie = $_POST['kategorie'];
-        $name = $_POST['name'];
-        $preis = 3;
-        $datum = "1900-12-12";
-        $bild = "bild";
-        $beschreibung = $_POST["beschreibung"];
-        $bestätigung = 0;
+        $email = $_POST['email'];
+        $passwort = $_POST['passwort'];
+        if ($email === $admin_name && $passwort === $admin_passwort) {
 
-        // $db = new Database();
-        $db->insertProdukt(NULL, $kategorie, $name, $preis, $datum, $bild, $beschreibung, $bestätigung);
+            echo "eingeloggt";
 
+            $_SESSION['eingeloggt'] = true;
+            if (isset($_SESSION['eingeloggt']) && $_SESSION['eingeloggt'] === true) {
+                echo "Session eingeloggt";
+
+            }
+        } else {
+            echo "Fehler im isset";
+        }
+
+
+    } else {
+        echo "nicht eingeloggt ";
     }
+    ?>
+    <?php
+
+    echo $_SESSION['email2'];
+
+
 
 
     ?>
+
+
+
+
 </body>
 
 </html>
