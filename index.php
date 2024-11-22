@@ -13,14 +13,14 @@
 
     <img src="/images/ebay_logo.png" alt="svg" width="400px">
     <h3>BFW-Version Kostenpflichtig. Kompliziert. Nutzlos.</h3>
-    <!-- <form action="Loginadmin.php" methode="POST">
+    <!-- <form action="Loginadmin.php" method="POST">
 
         <input type="submit" value="Einloggen Admin"> </input>
     </form> -->
     <a class="admin_" href="Loginadmin.php">Einloggen Admin</a>
     <div class="Banner">
 
-        <form action="Suche.php" methode="POST">
+        <form action="" method="POST">
             <input placeholder="Was suchen Sie?">
 
             <img class="lupe" src="/images/lupe.png" width="20px" alt="Q">

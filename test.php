@@ -4,66 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin_login</title>
+    <title>Document</title>
     <link rel="stylesheet" href="index.css">
-
+    </link>
 </head>
 
 <body>
-    <div class="flexer"></div>
+
     <a href="index.php"><img src="/images/ebay_logo.png" alt="svg" width="400px"></a>
+    <h3>BFW-Version Kostenpflichtig. Kompliziert. Nutzlos.</h3>
+    <a class="admin_" href="Loginadmin.php">Einloggen Admin</a>
+    <div class="Banner">
 
-    <p>Logg dich hier ein, lieber Admin!</p>
-    <form action="" method="POST" class="Formular_Admin">
+        <form action="" method="POST">
+            <input placeholder="Was suchen Sie?">
 
-        <input placeholder="Email" name="email">
-        <input placeholder="Passwort" name="passwort">
+            <img class="lupe" src="/images/lupe.png" width="20px" alt="Q">
+            <input class="blue_button" type="submit" value="Finden"> </input>
+        </form>
+        <a href="AnzeigeAufgeben.php"> <button class="grey_button">+ Anzeige aufgeben</button></a>
 
-        <input type="submit" name="submit" value="Einloggen"> </input>
-    </form>
-
-    <?php
-    session_start();
-
-    $admin_name = 'faro';
-    $admin_passwort = "1234";
-
-
-
-
-    if (isset($_POST['submit'])) {
-        $email = $_POST['email'];
-        $passwort = $_POST['passwort'];
-        if ($email === $admin_name && $passwort === $admin_passwort) {
-
-            echo "eingeloggt";
-
-            $_SESSION['eingeloggt'] = true;
-            if (isset($_SESSION['eingeloggt']) && $_SESSION['eingeloggt'] === true) {
-                echo "Session eingeloggt";
-
-            }
-        } else {
-            echo "Fehler im isset";
-        }
+    </div>
+    <div class="werbung">
+        <img src="/images/werbung1.jpeg" alt="svg" width="400px">
+        <img src="/images/werbung2.jpg" alt="svg" width="400px">
+        <img src="/images/werbung3.jpg" alt="svg" width="400px">
+        <img src="/images/werbung4.jpg" alt="svg" width="400px">
 
 
-    } else {
-        echo "nicht eingeloggt ";
-    }
-    ?>
-    <?php
+    </div>
+    <div class="Hauptseite">
 
-    echo $_SESSION['email2'];
+
+        <div class="Rubrik">
+            <p>Kategorien</p>
+            <ul>
+                <li><a>Bücher</a></li>
+                <li><a>Technik</a></li>
+                <li> <a>Möbel</a></li>
+                <li> <a>Dienstleistungen</a></li>
+                <li><a>Lebensmittel</a></li>
+            </ul>
 
 
 
-
-    ?>
-
-
+        </div>
+        <div class="Anzeigen">
 
 
+        </div>
 </body>
 
 </html>
