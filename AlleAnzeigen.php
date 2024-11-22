@@ -46,6 +46,7 @@
                     <li> <a><button type="submit" name="action" value="Dienstleistung">Dienstleistungen</button></a>
                     </li>
                     <li><a><button type="submit" name="action" value="Lebensmittel">Lebensmittel</button></a></li>
+
                 </ul>
             </form>
 
@@ -58,8 +59,8 @@
 
                 <?php
 
-                include "DatabaseKlasse.php";
-                $db = new Database();
+                // include "DatabaseKlasse.php";
+                // $db = new Database();
                 // $db->showall();
                 
                 if (isset($_POST['action'])) {
@@ -81,7 +82,7 @@
                     if ($_POST['action'] === 'Dienstleistungen') {
 
 
-                        $db->showDienstleistungen();
+                        $db->showDienstleistung();
                     }
                     if ($_POST['action'] === 'Lebensmittel') {
 

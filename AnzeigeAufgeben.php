@@ -14,7 +14,17 @@
     <div class="flexer">
         <form action="AnzeigeAufgeben.php" method="POST" class="Formular_Anzeige">
             <p>Gib hier deine Anzeige auf!</p>
-            <input placeholder="Kategorie" type="text" name="kategorie">
+            <!-- <input placeholder="Kategorie" type="text" name="kategorie"> -->
+            <select name="kategorie">
+                <option value="">Kategorie</option>
+                <option value="Bücher">Bücher</option>
+                <option value="Technik">Technik</option>
+                <option value="Dienstleistung">Dienstleistung</option>
+
+                <option value="Möbel">Möbel</option>
+                <option value="Lebensmittel">Lebensmittel</option>
+
+            </select>
             <input placeholder="Name" type="text" name="name">
             <input placeholder="Preis" type="number" name="preis">
             <textarea placeholder="Beschreibung" type="text" name="beschreibung"></textarea>
@@ -40,7 +50,7 @@
         $db = new Database();
         $db->insertProdukt(NULL, $kategorie, $name, $preis, $datum, $bild, $beschreibung, $bestätigung);
 
-        echo " Warte bitte das deine Anzeige bestätigt wurde, dies kann einige Zeit dauern";
+        echo " Warte bitte das deine Anzeige bestätigt wurde, dies kann einige Zeit dauern klick auf zurück oder auf Ebaykleinanzeigen!";
     }
 
 

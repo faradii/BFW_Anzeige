@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BFW Kleinanzeigen</title>
     <link rel="stylesheet" href="index.css">
     </link>
 </head>
@@ -58,6 +58,7 @@
                         <li> <a><button type="submit" name="action" value="Dienstleistung">Dienstleistungen</button></a>
                         </li>
                         <li><a><button type="submit" name="action" value="Lebensmittel">Lebensmittel</button></a></li>
+
                     </ul>
                 </form>
 
