@@ -15,7 +15,7 @@
 
     <p>Logg dich hier ein, lieber Admin!</p>
     <form action="" method="POST" class="Formular_Admin">
-        <input placeholder="Email" name="email">
+        <input placeholder="admin" name="admin">
         <input placeholder="Passwort" name="passwort">
 
         <input type="submit" name="submit" value="Einloggen"> </input>
@@ -25,15 +25,15 @@
 
     $admin_name = 'faro';
     $admin_passwort = "1234";
-    $email = "";
+    $admin = "";
     $passwort = "";
 
     if (isset($_POST['submit'])) {
-        $email = $_POST['email'];
+        $admin = $_POST['admin'];
         $passwort = $_POST['passwort'];
 
 
-        if ($email === $admin_name && $passwort === $admin_passwort) {
+        if ($admin === $admin_name && $passwort === $admin_passwort) {
 
             echo "Du bist jetzt eingeloggt </br>";
 

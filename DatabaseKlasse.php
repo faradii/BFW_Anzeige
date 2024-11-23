@@ -199,11 +199,34 @@ class Database
 
 
 
+    public function showsuche($produkt)
+    {
 
+        $produkt = trim($produkt);
+        $produkt = $this->conn->real_escape_string($produkt);
 
+        $sql =" SELECT * FROM kleinanzeigen WHERE name LIKE '%$produkt%'";
+        $ergebnis= $this->conn->query($sql);
 
+        if ($ergebnis->num_rows > 0) {
+            while ($row = $ergebnis->fetch_assoc()) {
+                echo "<div class='Anzeige_suche'>" . "<img src='" . $row['bild'] . "'" . "width=200px height=150px/><ul><li>" . $row['name'] . "</li>" . "<li>" . " online seit: " . $row["datum"] . "</li>" . "<li>" . "Kategorie: " . $row["kategorie"] . "</li>" . "<li>" . $row["beschreibung"] . "</li><br/>" . "<li><b class='Preis'>" . $row["preis"] . "€</b>" . "</li>" . "</ul></div>";
+            }
+        } 
+        else {
+            echo "Fehler" . $this->conn->error;
+            }
 
+    }
+   
+
+    
 }
+?>
+
+
+
+
 
 
 ?>

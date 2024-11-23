@@ -1,10 +1,21 @@
 <?php
-if (function_exists('mysqli_connect')) {
-    echo "MySQLi extension is enabled!";
-} else {
-    echo "MySQLi extension is NOT enabled.";
-    phpinfo();
-}
+// if (function_exists('mysqli_connect')) {
+//     echo "MySQLi extension is enabled!";
+// } else {
+//     echo "MySQLi extension is NOT enabled.";
+//     phpinfo();
+// }
+// 
+// session_start();
+// $_SESSION["username"]="home";
+// $_SESSION["passwort"]="1111";
+ 
+
+// echo $_SESSION["username"];
+// echo $_SESSION["passwort"];
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -26,24 +37,23 @@ if (function_exists('mysqli_connect')) {
 
         <input type="submit" value="Einloggen Admin"> </input>
     </form> -->
-    <a class="admin_" href="Loginadmin.php">Einloggen Admin</a>
+    <a class="admin_" href="Loginadmin.php"><button>Einloggen Admin</button></a>
+    
     <div class="Banner">
 
-        <form action="" method="POST">
-            <input placeholder="Was suchen Sie?">
-
-            <img class="lupe" src="/images/lupe.png" width="20px" alt="Q">
-            <input class="blue_button" type="submit" value="Finden"> </input>
+    <form action="" method="POST">
+            <input type="text" placeholder="Was suchen Sie?" name="Suchabfrage" required>
+            <input class="blue_button" type="submit" name="submit" value="Finden"/> 
         </form>
 
         <a href="AnzeigeAufgeben.php"> <button class="grey_button">+ Anzeige aufgeben</button></a>
 
     </div>
     <div class="werbung">
-        <img src="/images/werbung1.jpeg" alt="svg" width="400px">
-        <img src="/images/werbung2.jpg" alt="svg" width="400px">
-        <img src="/images/werbung3.jpg" alt="svg" width="400px">
-        <img src="/images/werbung4.jpg" alt="svg" width="400px">
+        <img src="/images/werbung1.jpeg" alt="svg" width="200px">
+        <img src="/images/werbung2.jpg" alt="svg" width="200px">
+        <img src="/images/werbung3.jpg" alt="svg" width="200px">
+        <img src="/images/werbung4.jpg" alt="svg" width="200px">
 
 
     </div>
@@ -107,21 +117,26 @@ if (function_exists('mysqli_connect')) {
                 ?>
             </div>
 
-
-
-
-            <div class="suche_kasten">
-
                 <p>alle Suchergebnisse: </p>
                 <div class="suche_kasten">
 
-                    <?php
+                <?php
 
                     include "DatabaseKlasse.php";
                     $db = new Database();
                     // $db->showall();
                     
-                    if (isset($_POST['action'])) {
+                    if (isset($_POST['submit'])){
+
+                        if (isset($_POST["Suchabfrage"]) && !empty($_POST["Suchabfrage"])){
+                            $eingabe = trim($_POST["Suchabfrage"]);//bereinigt feld nach der frage
+                            $db->showsuche($eingabe);
+                        }
+                        else{
+                        echo "";
+                        }
+                    }
+                     if (isset($_POST['action'])) {
                         if ($_POST['action'] === 'Alle') {
 
 
@@ -155,10 +170,14 @@ if (function_exists('mysqli_connect')) {
 
                     }
 
-                    ?>
-
-
-                </div>
+                ?>
+            </div>
+        </div>
+     <p>Ende der Ergebnisse</p>
+     <div class="impressum"> <h1>Impressum </h1>
+    <p>Projekt_Aufgabe_Bfw</p></div>
+    </div>      
+    
 </body>
 
 </html>
