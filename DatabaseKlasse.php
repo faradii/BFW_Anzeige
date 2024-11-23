@@ -45,13 +45,9 @@ class Database
         if ($stmt->execute()) {
             // echo "Erfolgreich hinzugefügt ";
         } else {
-            echo "Fehler" . $this->conn->error;
+            echo "Es gibt nix zum Bestätigen." . $this->conn->error;
         }
-        $stmt->close();
     }
-
-
-
 
 
     public function showall()
@@ -97,7 +93,7 @@ class Database
 
 
         } else {
-            echo "Fehler" . $this->conn->error;
+            echo "Es gibt nix zum Bestätigen!" . $this->conn->error;
         }
 
     }
@@ -227,6 +223,3 @@ class Database
 
 
 
-
-
-?>

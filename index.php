@@ -171,12 +171,12 @@
                     }
 
                 ?>
-            </div>
+                </div>
+            <p>Ende der Ergebnisse</p>
         </div>
-     <p>Ende der Ergebnisse</p>
-     <div class="impressum"> <h1>Impressum </h1>
-    <p>Projekt_Aufgabe_Bfw</p></div>
+
     </div>      
+    <!-- <div class="impressum"> <h1>Impressum </h1><p>Projekt_Aufgabe_Bfw</p></div> -->
     
 </body>
 

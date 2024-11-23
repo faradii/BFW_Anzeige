@@ -1,9 +1,7 @@
 * {
   font-family: sans-serif;
 }
-body {
-  background-color: rgb(238, 237, 237);
-}
+
 h3 {
   color: rgb(69, 68, 68);
 }
@@ -35,9 +33,9 @@ h3 {
 .grey_button {
   color: white;
   background-color: #87b817;
-  font-size: larger;
+  font-size: larg;
   border: 2px solid white;
-  padding: 4px;
+  padding: 6px;
   border-radius: 5px;
 }
 
