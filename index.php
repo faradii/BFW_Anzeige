@@ -50,10 +50,10 @@
 
     </div>
     <div class="werbung">
-        <img src="/images/werbung1.jpeg" alt="svg" width="200px">
-        <img src="/images/werbung2.jpg" alt="svg" width="200px">
-        <img src="/images/werbung3.jpg" alt="svg" width="200px">
-        <img src="/images/werbung4.jpg" alt="svg" width="200px">
+        <img src="/images/werbung1.jpeg" alt="svg" width="10%">
+        <img src="/images/werbung2.jpg" alt="svg" width="10%">
+        <img src="/images/werbung3.jpg" alt="svg" width="10%">
+        <img src="/images/werbung4.jpg" alt="svg" width="10%">
 
 
     </div>
@@ -176,7 +176,7 @@
         </div>
 
     </div>      
-    <!-- <div class="impressum"> <h1>Impressum </h1><p>Projekt_Aufgabe_Bfw</p></div> -->
+    <div class="impressum"> <h1>Impressum </h1><p>Projekt_Aufgabe_Bfw</p></div>
     
 </body>
 

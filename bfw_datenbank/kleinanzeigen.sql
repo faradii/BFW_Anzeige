@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 23. Nov 2024 um 13:57
+-- Erstellungszeit: 23. Nov 2024 um 21:39
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -43,13 +43,15 @@ CREATE TABLE `kleinanzeigen` (
 --
 
 INSERT INTO `kleinanzeigen` (`id`, `kategorie`, `name`, `preis`, `datum`, `bild`, `beschreibung`, `bestätigung`) VALUES
-(1, 'Bücher', 'Potter', 23, '2024-11-04', '/images/harrypotter.jpg', 'wasgehtab', 1),
 (2, 'Technik', 'Apple Computer', 25, '2024-11-11', '/images/rechner.jpg', 'Verkaufe meinen alten PC.', 1),
 (3, 'Dienstleistung', 'IT-Nachilfe', 2500, '2024-01-11', '/images/nachhilfe.jpg', 'Biete It-Nachhilfe und nebenbei auch Französisch an.', 1),
 (4, 'Möbel', 'Höhenverstellbarer Tisch', 12500, '2020-01-17', '/images/tisch.jpg', 'Verkaufe einen begehrten höhenverstellbaren Tisch im BFW', 1),
 (5, 'Dienstleistung', 'Suche eine Seele', 0, '1900-11-17', '/images/seele.jpg', 'Gesucht: Suche jemanden der seine Seele verkauft, meld dich bei mir! ', 1),
 (6, 'Lebensmittel', 'Gemüse', 0, '2022-05-27', '/images/kartoffel.jpg', 'Kenn mich mit Gemüse nicht so aus, darum verkaufe ich das lieber! ', 1),
-(7, 'Bücher', 'Harry Potter', 35, '1900-12-12', '/images/nophoto.jpg', 'Nettes Buch aber ich mag keine Bücher!', 1);
+(7, 'Bücher', 'Harry Potter', 35, '1900-12-12', '/images/nophoto.jpg', 'Nettes Buch aber ich mag keine Bücher!', 1),
+(8, 'Möbel', 'Couch', 234, '1900-12-12', '/images/nophoto.jpg', 'keine ahnung', 1),
+(9, 'Bücher', 'Herr der Ringe', 34, '1900-12-12', '/images/nophoto.jpg', 'Buch halt', 1),
+(14, 'Bücher', 'Harry Potter ', 45, '2024-11-04', '/images/harrypotter.jpg', 'Ich mag gar keine Bücher, daher steht es zum Verkauf!', 1);
 
 --
 -- Indizes der exportierten Tabellen
@@ -69,7 +71,7 @@ ALTER TABLE `kleinanzeigen`
 -- AUTO_INCREMENT für Tabelle `kleinanzeigen`
 --
 ALTER TABLE `kleinanzeigen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

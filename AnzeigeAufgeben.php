@@ -34,14 +34,14 @@
 
     <?php
     include "DatabaseKlasse.php";
-
     if (isset($_POST['submit'])) {
         // var_dump($_POST);
+        
     
         $kategorie = $_POST['kategorie'];
         $name = $_POST['name'];
         $preis = $_POST['preis'];
-        $datum = "1900-12-12";
+        $datum = date('Y-m-d');
         $bild = "/images/nophoto.jpg";
         $beschreibung = $_POST["beschreibung"];
 

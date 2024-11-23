@@ -1,3 +1,4 @@
+/* Standard-Stile (Desktop) */
 * {
   font-family: sans-serif;
 }
@@ -5,17 +6,20 @@
 h3 {
   color: rgb(69, 68, 68);
 }
+
 .Banner {
-  position: absolute;
-  left: 0;
+  /* position: absolute; */
+  /* left: 0; */
   background-color: #87b817;
   height: 30px;
   width: 99%;
   padding: 10px;
   display: flex;
   justify-content: center;
+
   gap: 10px;
 }
+
 .blue_button {
   background-color: #0463d1;
   border: none;
@@ -25,15 +29,17 @@ h3 {
   width: 120px;
   border-radius: 5px;
 }
+
 .lupe {
   position: relative;
   left: 35px;
   top: 5px;
 }
+
 .grey_button {
   color: white;
   background-color: #87b817;
-  font-size: larg;
+  font-size: large;
   border: 2px solid white;
   padding: 6px;
   border-radius: 5px;
@@ -44,20 +50,23 @@ h3 {
   height: 100px;
   display: flex;
   justify-content: space-evenly;
-  background-color: #d2d5d7;
+  background-color: #f4f7d8;
   margin-top: 70px;
   border: 1px solid grey;
 }
+
 .Alles_Anzeigen_button {
   height: 50px;
   border: 1px solid rgb(113, 111, 111);
   background-color: #cdec84;
 }
+
 input {
   border-radius: 5px;
   padding: 3px;
   width: 250px;
 }
+
 .admin_ {
   position: absolute;
   top: 0px;
@@ -69,40 +78,36 @@ input {
   display: flex;
   justify-content: center;
   margin: auto;
-
   margin-top: 50px;
-  height: 100vh;
+  height: 200vh;
   color: rgb(0, 0, 0);
 }
+
 .Rubrik {
-  /* text-align: center; */
   padding: 20px;
   height: 100%;
   width: 150px;
   border: 1px solid rgb(199, 198, 198);
   color: rgb(0, 0, 0);
-
-  background-color: #d2d5d7;
+  background-color: #d7d4d2;
 }
+
 .Anzeigen {
   display: block;
-  height: 150%;
+  height: 100%;
   width: 70%;
   border: 1px solid rgb(194, 190, 190);
   color: rgb(0, 0, 0);
   padding: 20px;
-
-  justify-content: center;
-
-  background-color: #e2e4e6;
+  background-color: #f4e6be;
 }
+
 .Vorschlag {
-  /* text-align: center; */
   margin-right: 50px;
 }
+
 .schaukasten {
   display: flex;
-  /* overflow-x: scroll; */
   height: 300px;
   margin: auto;
   justify-content: center;
@@ -111,26 +116,19 @@ input {
 ul {
   list-style: none;
 }
+
 .Anzeige_kasten {
   display: block;
-  justify-content: center;
-  /* align-items: center; */
-  /* text-align: center;  */
-
   height: 250px;
   width: 200px;
-
-  /* padding:10px; */
-  border: 2px solid rgb(96, 149, 28);
+  border: 2px solid rgb(149, 131, 28);
   border-radius: 5px;
-  /* overflow-y: scroll; */
-  background-color: #ecf1df;
+  background-color: #f3ce17;
   margin: 2px;
 }
 
 .Anzeige_suche {
   display: flex;
-  /* background-color: #0463d1; */
   border: 1px solid rgb(96, 149, 28);
 }
 
@@ -138,9 +136,7 @@ ul {
   text-align: left;
   height: 70%;
   display: flex;
-  /* align-items: center; */
   flex-direction: column;
-  /* justify-content: center; */
   overflow-y: scroll;
 }
 
@@ -168,10 +164,10 @@ ul {
   padding: 20px;
   background-color: #e4e6e8;
 }
+
 .Formular_Admin {
   display: flex;
   justify-content: center;
-
   width: 50%;
   border: 1px solid rgb(94, 133, 36);
   background-color: #d2d5d7;
@@ -184,4 +180,65 @@ ul {
   background-color: #242423;
   color: white;
   height: 200px;
+  margin-top: 100px;
+}
+
+/* --- Responsive Stile für kleinere Bildschirme --- */
+@media (max-width: 768px) {
+  .Banner {
+    flex-direction: column;
+    align-items: center;
+
+    height: auto;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .blue_button,
+  .grey_button {
+    width: 100%;
+  }
+
+  .Hauptseite {
+    flex-direction: column;
+    margin-top: 20px;
+    height: auto;
+  }
+
+  .Rubrik {
+    width: 100%;
+    height: auto;
+
+    text-align: left;
+  }
+
+  .Anzeigen {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .schaukasten {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .Anzeige_kasten {
+    width: 60%;
+    height: auto;
+  }
+
+  .Formular_Admin {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .impressum {
+    height: auto;
+    padding: 20px;
+  }
+
+  .werbung {
+    display: none;
+  }
 }
